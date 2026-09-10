@@ -1,18 +1,45 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>এএস এআই</title><style>body{margin:0;background:#000;color:#fff;font-family:sans-serif;display:flex;justify-content:center}.a{width:100%;max-width:400px;background:#080808;min-height:100vh;display:flex;flex-direction:column}.t{padding:14px;background:#111;font-weight:900;text-align:center;border-bottom:1px solid #222}.c{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;overflow-y:auto}.m{padding:11px 14px;border-radius:18px;font-size:13px;max-width:82%}.b{background:#1c1c1c}.u{background:#fff;color:#000;align-self:flex-end}.p{margin:10px;background:#fff;color:#000;border-radius:16px;padding:14px;text-align:center}.n{background:#000;color:#fff;padding:11px;border-radius:10px;margin:6px 0;font-weight:900;font-size:17px}.i{display:flex;gap:6px;padding:10px;border-top:1px solid #222}input{flex:1;background:#1a1a1a;border:0;color:#fff;padding:12px 16px;border-radius:24px;outline:0}button{border:0;background:#fff;color:#000;border-radius:24px;padding:12px 16px;font-weight:900}</style></head><body><div class="a"><div class="t">এএস এআই - লাইভ চ্যাট</div><div class="c" id="c"><div class="m b">আসসালামু আলাইকুম! কি জানতে চান বলেন?</div></div><div class="p"><b>✅ পেমেন্ট নাম্বার</b><div class="n">০১৯৪৫৯৫২৫৩৩ - রকেট/উপায়</div><div class="n">০১৭১৩৪৭২৯৪২ - নগদ</div></div><div class="i"><input id="q" placeholder="এখানে লিখুন..."><button onclick="s()">➤</button></div></div><script>
-const ch=document.getElementById('c');
-function a(t,c){let d=document.createElement('div');d.className='m '+c;d.innerHTML=t;ch.appendChild(d);ch.scrollTop=ch.scrollHeight}
-function r(m){
-m=m.toLowerCase();
-if(m.includes("দাম")||m.includes("কত")) return "দাম মাত্র ১৪৯৯ টাকা স্যার।";
-if(m.includes("নাম্বার")||m.includes("বিকাশ")||m.includes("নগদ")||m.includes("রকেট")) return "নাম্বার: <br>০১৯৪৫৯৫২৫৩৩ (রকেট/উপায়)<br>০১৭১৩৪৭২৯৪২ (নগদ)";
-if(m.includes("কিভাবে")||m.includes("কেমনে")) return "উপরের নাম্বারে সেন্ড মানি করে লাস্ট ৪ ডিজিট দিন, আমি চালু করে দিবো।";
-if(m.includes("হ্যালো")||m.includes("সালাম")||m.includes("hi")) return "ওয়ালাইকুম সালাম স্যার, বলেন কিভাবে হেল্প করবো?";
-return "বুঝেছি স্যার। '"+m+"' - এটা হয়ে যাবে। পেমেন্ট করে জানান।";
-}
-function s(){
-let i=document.getElementById('q');if(!i.value)return;
-a(i.value,'u');let v=i.value;i.value='';
-setTimeout(()=>{a(r(v),'b')},500)
-}
-document.getElementById('q').addEventListener('keypress',e=>{if(e.key==='Enter')s()});
-</script></body></html>
+<!DOCTYPE html>
+<html lang="bn"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AS AI - Premium</title>
+<style>body{background:#000;color:#fff;font-family:sans-serif;display:flex;justify-content:center;margin:0}.a{width:100%;max-width:420px;background:#0a0a0a;min-height:100vh;display:flex;flex-direction:column}.t{padding:15px;background:#111;font-weight:900;text-align:center;border-bottom:1px solid #222;color:#00ff88}.c{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;overflow-y:auto;height:400px}.m{padding:10px 14px;border-radius:16px;font-size:13px;max-width:85%;line-height:1.5}.b{background:#1c1c1c}.u{background:#00ff88;color:#000;align-self:flex-end;font-weight:600}.p{margin:10px;background:#111;border:1px solid #00ff88;padding:12px;border-radius:12px;text-align:center}.n{background:#00ff88;color:#000;padding:8px;border-radius:8px;margin:5px 0;font-weight:900}.i{display:flex;gap:6px;padding:10px;border-top:1px solid #222}input{flex:1;background:#1a1a1a;border:0;color:#fff;padding:12px 16px;border-radius:24px;outline:0}button{border:0;background:#00ff88;color:#000;border-radius:24px;padding:12px 18px;font-weight:900}</style></head><body><div class="a"><div class="t">AS AI - PREMIUM CHAT</div><div class="c" id="c"><div class="m b">আসসালামু আলাইকুম স্যার! আমি AS AI। 100+ ধরনের App বানাতে পারি। কি App লাগবে বলেন? দাম সহ বলে দিচ্ছি।</div></div><div class="p"><b style="color:#00ff88">💰 হাই-কোয়ালিটি পেমেন্ট</b><div class="n">01945952533 - Rocket/Upay</div><div class="n">01713472942 - Nagad</div><div style="font-size:10px;margin-top:5px;color:#aaa">পেমেন্ট করে স্ক্রিনশট দিন, 100% প্রিমিয়াম App পাবেন</div></div><div class="i"><input id="q" placeholder="যেমন: E-commerce App কত?"><button onclick="send()">➤</button></div></div><script>
+const DB={
+"দাম":"📋 **AS AI PREMIUM PRICE LIST 2025 (হাই রেট)**\n\n🔹 BASIC - 1499৳\n- 1 Page App\n- Calculator, BMI, Notes, QR Scanner\n- 24h Delivery\n\n🔹 STANDARD - 2999৳\n- 5 Page App\n- Business, Portfolio, Blog, News\n- Admin Panel + APK\n\n🔹 PREMIUM - 4999৳ (Most Popular)\n- Unlimited Page\n- E-commerce, Food Delivery, Chat App\n- Bkash/Nagad Payment Add\n- Play Store Ready\n\n🔹 ENTERPRISE - 7999৳ - 14999৳\n- School, Hospital, POS, Multi-vendor E-commerce\n- Lifetime Support\n\n💳 Payment: 01945952533 (Rocket) / 01713472942 (Nagad)",
+"ecommerce":"🛒 **E-commerce App - 7999৳**\nDaraz এর মতো ফুল App। Product, Cart, Order, Bkash/Nagad Payment, Admin Panel, Rider Panel সহ। Play Store Ready APK সহ। সময়: 3 দিন।",
+"food":"🍔 **Food Delivery App - 7999৳**\nFoodpanda এর মতো। Customer + Rider + Admin 3 টা App। Live Tracking সহ।",
+"chat":"💬 **Chat App - 6999৳**\nWhatsApp এর মতো Realtime Chat। Firebase, Image/Video Send, Voice Message।",
+"business":"🏢 **Business App - 2999৳**\nআপনার দোকানের জন্য। Product Gallery, WhatsApp Order, Map Location।",
+"portfolio":"👨‍💼 **Portfolio - 2499৳**\nপ্রফেশনাল CV App।",
+"news":"📰 **News App - 3499৳**\nনিজে খবর পোস্ট করবেন। AdMob দিয়ে ইনকাম।",
+"blog":"✍️ **Blog App - 2999৳**\nAdMob Income সহ।",
+"doctor":"👨‍⚕️ **Doctor App - 6999৳**\nAppointment Booking System।",
+"school":"🏫 **School Management - 14999৳**\nAttendance, Result, Fees, Live Class।",
+"bmi":"🧮 **BMI Calculator - 1499৳**\nPremium Design।",
+"calculator":"🔢 **Calculator - 1499৳**",
+"qr":"📱 **QR Scanner - 1999৳**",
+"todo":"✅ **ToDo App - 1499৳**",
+"notes":"📝 **Notes App - 1499৳**",
+"islamic":"🕌 **Islamic App - 3499৳**\nনামাজের সময়, কুরআন, দোয়া, কিবলা কম্পাস।",
+"pos":"💰 **POS App - 9999৳**\nদোকানের হিসাব, স্টক, বিক্রি।",
+"salon":"💇 **Salon Booking - 4999৳**",
+"gym":"💪 **Gym Management - 5999৳**",
+"rent":"🏠 **House Rent App - 6999৳**",
+"ride":"🚕 **Ride Sharing - 14999৳**\nPathao/Uber এর মতো।",
+"delivery":"📦 **Delivery App - 7999৳**",
+"doctor2":"💊 **Pharmacy App - 6999৳**",
+"hotel":"🏨 **Hotel Booking - 7999৳**",
+"event":"🎉 **Event Management - 5999৳**",
+"service_list":"📋 **100+ App List (হাই রেট)**\n1. Calculator - 1499৳\n2. BMI/Age/GPA - 1499৳\n3. ToDo/Notes - 1499৳\n4. QR Scanner - 1999৳\n5. Weather App - 1999৳\n6. Portfolio - 2499৳\n7. Business App - 2999৳\n8. Blog - 2999৳\n9. News - 3499৳\n10. Islamic - 3499৳\n11. E-commerce - 7999৳\n12. Food Delivery - 7999৳\n13. Chat App - 6999৳\n14. Doctor Booking - 6999৳\n15. POS - 9999৳\n16. School - 14999৳\n17. Ride Sharing - 14999৳\nআরো 80+ App বানাই। নাম বলেন।"
+};
+function getReply(m){
+ m=m.toLowerCase();
+ if(m.includes("দাম")||m.includes("কত")||m.includes("price")||m.includes("rate")||m.includes("রেট")) return DB["দাম"];
+ if(m.includes("ecommerce")||m.includes("ই-কমার্স")||m.includes("দোকান")||m.includes("shop")) return DB["ecommerce"];
+ if(m.includes("food")||m.includes("খাবার")||m.includes("ফুড")) return DB["food"];
+ if(m.includes("chat")) return DB["chat"];
+ if(m.includes("business")||m.includes("বিজনেস")) return DB["business"];
+ if(m.includes("portfolio")) return DB["portfolio"];
+ if(m.includes("news")) return DB["news"];
+ if(m.includes("blog")) return DB["blog"];
+ if(m.includes("doctor")||m.includes("ডাক্তার")) return DB["doctor"];
+ if(m.includes("school")||m.includes("স্কুল")||m.includes("coaching")) return DB["school"];
+ if(m.includes("bmi")) return DB["bmi"];
+ if(m.includes("
