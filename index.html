@@ -1,74 +1,144 @@
 <!DOCTYPE html>
-<html lang="bn"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AS AI - Premium</title>
-<style>body{margin:0;background:#000;color:#fff;font-family:sans-serif;display:flex;justify-content:center}.a{width:100%;max-width:420px;background:#0a0a0a;min-height:100vh;display:flex;flex-direction:column}.t{padding:14px;background:#111;font-weight:900;text-align:center;color:#00ff88;border-bottom:1px solid #222}.c{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;overflow-y:auto;min-height:300px}.m{padding:10px 14px;border-radius:18px;font-size:13px;max-width:85%;white-space:pre-wrap}.b{background:#1c1c1c}.u{background:#00ff88;color:#000;align-self:flex-end}.p{margin:10px;background:#111;border:1px solid #00ff88;padding:12px;border-radius:12px;text-align:center}.n{background:#00ff88;color:#000;padding:9px;border-radius:8px;margin:6px 0;font-weight:900;font-size:16px}.up{margin:10px;border:2px dashed #00ff88;padding:14px;border-radius:12px;text-align:center;background:#111}.up label{background:#00ff88;color:#000;padding:10px 20px;border-radius:20px;font-weight:900;cursor:pointer;display:inline-block}.up img{width:100%;border-radius:10px;margin-top:12px;display:none;max-height:250px;object-fit:contain}.i{display:flex;gap:6px;padding:12px;border-top:1px solid #222;position:sticky;bottom:0;background:#0a0a0a}.i input{flex:1;background:#1a1a1a;border:1px solid #333;color:#fff;padding:12px 16px;border-radius:24px;outline:none;font-size:14px}.i button{border:0;background:#00ff88;color:#000;border-radius:24px;padding:12px 18px;font-weight:900;cursor:pointer}</style></head>
+<html lang="bn"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AS AI - 100 Service</title>
+<style>body{margin:0;background:#000;color:#fff;font-family:sans-serif;display:flex;justify-content:center}.a{width:100%;max-width:450px;background:#0a0a0a;min-height:100vh;display:flex;flex-direction:column}.t{padding:14px;background:#111;text-align:center;font-weight:900;color:#00ff88;border-bottom:1px solid #222}.c{flex:1;padding:12px;display:flex;flex-direction:column;gap:10px;overflow-y:auto;height:70vh}.m{padding:12px 14px;border-radius:16px;font-size:13px;line-height:1.6;white-space:pre-wrap;max-width:90%}.b{background:#1a1a1a;border:1px solid #222}.u{background:#00ff88;color:#000;align-self:flex-end;font-weight:700}.p{margin:10px;background:#111;border:1px solid #00ff88;border-radius:12px;padding:12px;text-align:center}.n{background:#00ff88;color:#000;padding:10px;border-radius:8px;margin:6px 0;font-weight:900;font-size:16px}.i{display:flex;gap:6px;padding:12px;border-top:1px solid #222;position:sticky;bottom:0;background:#0a0a0a}.i input{flex:1;background:#1a1a1a;border:1px solid #333;color:#fff;padding:12px 16px;border-radius:24px;outline:0}.i button{background:#00ff88;color:#000;border:0;border-radius:24px;padding:12px 18px;font-weight:900}</style></head>
 <body><div class="a">
-<div class="t">AS AI - LIVE CHAT</div>
-<div class="c" id="c"><div class="m b">আসসালামু আলাইকুম স্যার! কি App লাগবে বলেন? দাম সহ বলে দিচ্ছি। পেমেন্ট করে স্ক্রিনশট দিলে সাথে সাথে বানাই দিবো।</div></div>
-
-<div class="p"><b>💰 Payment করুন</b><div class="n">01945952533 - Rocket/Upay</div><div class="n">01713472942 - Nagad</div><div style="font-size:11px;color:#aaa;margin-top:6px">Send Money করে নিচে Screenshot দিন</div></div>
-
-<div class="up">
-<div style="font-size:13px;margin-bottom:8px;font-weight:900">📸 পেমেন্ট Screenshot দিন - ডাইরেক্ট আমার কাছে আসবে</div>
-<label for="f">📤 Screenshot বেছে নিন</label>
-<input type="file" id="f" accept="image/*" style="display:none" onchange="handleSS(event)">
-<img id="pv">
-<div id="dn" style="display:none;margin-top:10px;background:#00ff88;color:#000;padding:10px;border-radius:8px;font-weight:900;font-size:13px">✅ Screenshot পেয়েছি! এখন নিচে App এর নাম লিখে WhatsApp এ পাঠান।</div>
-<button id="waBtn" style="display:none;margin-top:10px;background:#25D366;color:#fff;width:100%" onclick="sendWA()">📲 WhatsApp এ আমার কাছে পাঠান</button>
+<div class="t">AS AI - 100+ SERVICE LIST</div>
+<div class="c" id="c"></div>
+<div class="p"><b>💰 Payment করুন</b><div class="n">01945952533 - Rocket/Upay</div><div class="n">01713472942 - Nagad</div><div style="font-size:11px;color:#aaa">Send Money করে Screenshot দিন</div></div>
+<div class="i"><input id="q" placeholder="লিখুন: যেমন App বানাবো"><button onclick="send()">➤</button></div>
 </div>
-
-<div class="i"><input id="q" type="text" placeholder="মেসেজ লিখুন... যেমন: E-commerce কত?"><button onclick="sendMsg()">➤</button></div>
-</div>
-
 <script>
-const cBox=document.getElementById('c');
-let lastSS=null;
-let appName="";
+const box=document.getElementById('c');
+function add(t,cl){let d=document.createElement('div');d.className='m '+cl;d.innerText=t;box.appendChild(d);box.scrollTop=box.scrollHeight}
 
-function add(t,cls){let d=document.createElement('div');d.className='m '+cls;d.innerText=t;cBox.appendChild(d);cBox.scrollTop=cBox.scrollHeight}
+const WELCOME=`আসসালামু আলাইকুম স্যার! 🙏 আমি AS AI
+
+আপনাকে স্বাগতম। আমি 100+ ধরনের App বানাতে পারি। নিচে ফুল লিস্ট, দাম ও লাভ দেওয়া হলো:
+
+📋 100 টা সার্ভিস লিস্ট (লাভ সহ):
+
+1. Calculator App - 1499৳ - লাভ: সবাই ইউজ করবে, Play Store এ আপলোড দিলে Ad থেকে ইনকাম
+2. BMI Calculator - 1499৳ - লাভ: Health সচেতন মানুষ ডাউনলোড করবে
+3. Age Calculator - 1499৳ - লাভ: ভাইরাল হয়
+4. GPA Calculator - 1499৳ - লাভ: ছাত্রদের জন্য, প্রচুর ডাউনলোড
+5. Notes App - 1499৳ - লাভ: ডাটা সেভ থাকে
+6. ToDo List - 1499৳ - লাভ: অফিসের কাজ ম্যানেজ
+7. QR Scanner - 1999৳ - লাভ: দোকানে লাগে
+8. QR Maker - 1999৳ - লাভ: বিজনেস কার্ডে লাগে
+9. Weather App - 1999৳ - লাভ: প্রতিদিন মানুষ দেখে
+10. Unit Converter - 1499৳
+11. Currency Converter - 1999৳ - লাভ: বিদেশীদের জন্য
+12. Portfolio App - 2499৳ - লাভ: চাকরি পেতে সাহায্য
+13. CV Maker - 2499৳ - লাভ: প্রফেশনাল লুক
+14. Business Profile - 2999৳ - লাভ: দোকানের বিক্রি বাড়বে 200%
+15. Shop Profile - 2999৳ - লাভ: কাস্টমার অনলাইনে দেখবে
+16. Blog App - 2999৳ - লাভ: লেখা লিখে Ad থেকে ইনকাম
+17. News App - 3499৳ - লাভ: নিজে খবর দিয়ে ইনকাম
+18. Islamic App - 3499৳ - লাভ: নামাজ, কুরআন, কিবলা - সওয়াব + ইনকাম
+19. Tasbih App - 1999৳
+20. Dua App - 2499৳
+21. Qibla Compass - 2499৳
+22. Hadith App - 2999৳
+23. Quran App - 3499৳
+24. Salon Booking - 4999৳ - লাভ: সিরিয়াল ম্যানেজ, কাস্টমার বাড়বে
+25. Barber Shop - 4999৳
+26. Gym Management - 5999৳ - লাভ: মেম্বার ফি ম্যানেজ
+27. Doctor Appointment - 6999৳ - লাভ: রোগী সিরিয়াল অনলাইনে
+28. Pharmacy App - 6999৳ - লাভ: ওষুধ হোম ডেলিভারি
+29. Blood Donation - 3999৳ - লাভ: মানবসেবা
+30. E-commerce App - 7999৳ - লাভ: Daraz এর মতো দোকান, মাসে লাখ টাকা বিক্রি
+31. Single Shop E-commerce - 5999৳
+32. Multi-vendor E-commerce - 19999৳ - লাভ: Daraz এর মতো কমিশন পাবেন
+33. Food Delivery - 7999৳ - লাভ: Foodpanda এর মতো, ডেলিভারি চার্জ
+34. Grocery Delivery - 6999৳
+35. Chat App - 6999৳ - লাভ: WhatsApp এর মতো নিজের App
+36. Video Call App - 9999৳
+37. Social Media App - 14999৳
+38. House Rent / To-Let - 6999৳ - লাভ: বাড়ি ভাড়া দিয়ে কমিশন
+39. Hotel Booking - 7999৳ - লাভ: রুম বুকিং এ কমিশন
+40. Tour & Travel - 7999৳
+41. POS App - 9999৳ - লাভ: দোকানের হিসাব, চুরি বন্ধ
+42. Inventory Management - 9999৳
+43. Billing App - 7999৳
+44. School Management - 14999৳ - লাভ: স্কুলের সব হিসাব এক App এ
+45. Coaching Management - 9999৳
+46. Attendance App - 4999৳
+47. Result App - 4999৳
+48. Online Exam - 5999৳
+49. Live Class App - 7999৳
+50. Ride Sharing - 14999৳ - লাভ: Pathao/Uber এর মতো ইনকাম
+51. Car Rental - 7999৳
+52. Delivery Rider App - 6999৳
+53. Courier Tracking - 6999৳
+54. Event Management - 5999৳
+55. Wedding Planner - 5999৳
+56. Restaurant Management - 7999৳
+57. Table Booking - 4999৳
+58. Recipe App - 2999৳ - লাভ: রান্নার ভিডিও দিয়ে ইনকাম
+59. Matrimony / Biye App - 9999৳ - লাভ: বিয়ে দিয়ে টাকা
+60. Job Circular App - 5999৳
+61. Job Finder - 6999৳
+62. Freelancing Profile - 2999৳
+63. Music Player - 2499৳
+64. Video Player - 2499৳
+65. Wallpaper App - 1999৳ - লাভ: Ad থেকে ইনকাম
+66. Meme App - 2999৳
+67. Quotes App - 1999৳
+68. E-Book Library - 3999৳
+69. Dictionary - 2999৳
+70. Translation App - 3999৳
+71. Expense Tracker - 2999৳ - লাভ: টাকা খরচের হিসাব
+72. Budget Planner - 2999৳
+73. Loan Calculator - 1999৳
+74. EMI Calculator - 1999৳
+75. Crypto Tracker - 4999৳
+76. Gold Price App - 2999৳
+77. File Manager - 3999৳
+78. PDF Reader - 2499৳
+79. Image Editor - 5999৳
+80. Video Editor Lite - 7999৳
+81. Voice Recorder - 1999৳
+82. Call Recorder - 2999৳
+83. Number Location - 3999৳
+84. Flashlight - 999৳
+85. Compass - 999৳
+86. Baby Care - 3999৳
+87. Pregnancy Tracker - 3999৳
+88. Fitness Tracker - 4999৳
+89. Step Counter - 2999৳
+90. Diet Plan - 3999৳
+91. Water Reminder - 1999৳
+92. Hospital Management - 14999৳
+93. Ambulance Booking - 6999৳
+94. Donation App - 4999৳
+95. NGO Management - 9999৳
+96. Election Survey - 5999৳
+97. Voting App - 7999৳
+98. Agriculture App - 5999৳ - লাভ: কৃষকদের পরামর্শ
+99. Weather + Crop Price - 6999৳
+100. Custom App - আপনার আইডিয়া বলুন - 1499৳ থেকে 20000৳
+
+আপনি কোন App টা বানাতে চান? নাম লিখুন, আমি সাথে সাথে দাম বলবো।`;
+
+window.onload=()=>{add(WELCOME,'b')};
 
 function getReply(m){
  m=m.toLowerCase();
- if(m.includes("দাম")||m.includes("কত")||m.includes("price")||m.includes("rate")) return "📋 PREMIUM PRICE LIST\n\nBASIC - 1499৳ : 1 Page App\nSTANDARD - 2999৳ : 5 Page + Admin\nPREMIUM - 4999৳ : E-commerce/Chat App + Play Store\nENTERPRISE - 7999৳+ : School/POS/Ride App\n\nPayment: 01945952533 (Rocket) / 01713472942 (Nagad)\nScreenshot দিন, সাথে সাথে বানাই দিবো।";
- if(m.includes("ecommerce")||m.includes("দোকান")||m.includes("shop")) return "🛒 E-commerce App - 4999৳\nDaraz এর মতো। Cart, Order, Bkash/Nagad, Admin Panel সহ। 3 দিনে Delivery।";
- if(m.includes("food")) return "🍔 Food Delivery - 4999৳\nFoodpanda এর মতো। Customer+Rider+Admin।";
- if(m.includes("chat")) return "💬 Chat App - 4999৳\nWhatsApp এর মতো। Image/Video/Voice।";
- if(m.includes("business")||m.includes("বিজনেস")) return "🏢 Business App - 2999৳\nProduct Gallery, WhatsApp Order, Map।";
- if(m.includes("bmi")||m.includes("calculator")) return "🧮 Calculator/BMI App - 1499৳\nPremium Design, 24h Delivery।";
- if(m.includes("school")||m.includes("স্কুল")) return "🏫 School Management - 7999৳\nAttendance, Result, Fees।";
- if(m.includes("সালাম")||m.includes("হ্যালো")||m.includes("hi")||m.includes("hello")) return "ওয়ালাইকুম সালাম স্যার! কি App বানাবেন বলেন? নাম বলেন, দাম বলে দিচ্ছি।";
- return "বুঝেছি স্যার! আপনি '"+m+"' App চান। এটার দাম 2999৳ - 4999৳ এর মধ্যে।\n\nআপনি Payment করে Screenshot দিন, আমি এখনই বানাই দিচ্ছি।\n\nPayment: 01945952533 (Rocket) / 01713472942 (Nagad)";
+ if(m.includes("বানাবো")||m.includes("বানান")||m.includes("লাগবে")||m.includes("চাই")||m.includes("করবো")){
+  return `হ্যাঁ স্যার, এই App টা 100% বানানো যাবে ✅\n\nআপনি "${m}" App টা বানাতে চান, এটা প্রিমিয়াম কোয়ালিটিতে বানাই দিবো।\n\n💰 দাম: 1499৳ থেকে 7999৳ এর মধ্যে (ডিজাইন অনুযায়ী)\n\n👉 এখন Payment করে দিন:\n01945952533 - Rocket/Upay\n01713472942 - Nagad\n\nSend Money করে Screenshot + App এর নাম লিখে দিন, 24 ঘন্টার মধ্যে App রেডি করে APK ফাইল দিয়ে দিবো ইনশাআল্লাহ।`;
+ }
+ if(m.includes("দাম")||m.includes("কত")) return "স্যার দাম উপরের লিস্টে দেওয়া আছে। 1499৳ থেকে শুরু। আপনি কোন App টা চান নাম বলেন, আমি exact দাম বলছি।";
+ if(m.includes("সালাম")||m.includes("hi")||m.includes("hello")) return "ওয়ালাইকুম সালাম স্যার! কোন App টা বানাবেন বলেন? উপরের 100 টা থেকে নাম বলেন।";
+ return `বুঝেছি স্যার, আপনি "${m}" নিয়ে App চান। এটা বানানো যাবে ✅\n\nদাম 2999৳ - 4999৳\n\nPayment করুন:\n01945952533 (Rocket)\n01713472942 (Nagad)\n\nPayment করে Screenshot দিন।`;
 }
 
-function sendMsg(){
+function send(){
  let i=document.getElementById('q');
  if(!i.value.trim()) return;
  let v=i.value;
  add(v,'u');
- appName=v;
  i.value='';
- setTimeout(()=>{add(getReply(v),'b')},500);
+ setTimeout(()=>add(getReply(v),'b'),600);
 }
-document.getElementById('q').addEventListener('keypress',e=>{if(e.key==='Enter') sendMsg()});
-
-function handleSS(e){
- let file=e.target.files[0];
- if(!file) return;
- lastSS=file;
- let pv=document.getElementById('pv');
- pv.src=URL.createObjectURL(file);
- pv.style.display='block';
- document.getElementById('dn').style.display='block';
- document.getElementById('waBtn').style.display='block';
- add("📸 Screenshot দিয়েছেন",'u');
- setTimeout(()=>add("✅ ধন্যবাদ স্যার! Screenshot পেয়েছি। এখন App এর নাম উপরে লিখে WhatsApp বাটনে চাপ দিন, সোজা আমার কাছে চলে আসবে।",'b'),600);
-}
-
-function sendWA(){
- let name=document.getElementById('q').value || appName || "App";
- let text=`আসসালামু আলাইকুম ভাই, আমি Payment করেছি।%0AApp Name: ${name}%0A%0APayment Number: 01945952533 / 01713472942%0A%0AScreenshot দিলাম, দয়া করে চেক করুন।`;
- let url=`https://wa.me/8801945952533?text=${text}`;
- window.open(url,'_blank');
- add("📲 WhatsApp এ পাঠানো হয়েছে! Screenshot সহ মেসেজ আমার কাছে চলে গেছে।",'u');
-}
+document.getElementById('q').addEventListener('keypress',e=>{if(e.key==='Enter')send()});
 </script></body></html>
