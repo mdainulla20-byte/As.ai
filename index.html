@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AS.AI - 100% Auto AI Service</title>
+<style>
+body{margin:0;background:#000;color:#fff;font-family:sans-serif;display:flex;justify-content:center}
+.app{width:100%;max-width:400px;background:#080808;min-height:100vh;display:flex;flex-direction:column}
+.top{padding:14px;display:flex;justify-content:space-between;background:#111;border-bottom:1px solid #222;font-weight:900}
+.live{background:#25D366;color:#000;padding:4px 10px;border-radius:20px;font-size:10px}
+.chat{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;overflow:auto}
+.msg{padding:11px 14px;border-radius:18px;font-size:13px;max-width:80%;line-height:18px}
+.bot{background:#1c1c1c}
+.user{background:#fff;color:#000;align-self:flex-end}
+.pay{margin:10px;background:#fff;color:#000;border-radius:16px;padding:16px;text-align:center}
+.num{background:#000;color:#fff;padding:12px;border-radius:12px;margin:8px 0;font-weight:900;font-size:18px}
+.num span{font-size:11px;color:#888;display:block;font-weight:400;margin-top:2px}
+.desc{margin:0 10px 10px 10px;background:#111;border:1px solid #222;border-radius:12px;padding:12px}
+.input{display:flex;gap:6px;padding:10px;border-top:1px solid #111;background:#080808}
+input{flex:1;background:#1a1a1a;border:0;color:#fff;padding:12px 16px;border-radius:24px;outline:0}
+button{border:0;border-radius:24px;padding:12px 16px;font-weight:900;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top">
+    <div>AS.AI</div>
+    <div class="live">● LIVE</div>
+  </div>
+
+  <div class="chat" id="chat">
+    <div class="msg bot">আসসালামু আলাইকুম স্যার! আমি AS.AI। কি কাজ করাবেন বলেন, আমি 100% অটো করে দিচ্ছি।</div>
+  </div>
+
+  <div class="pay">
+    <b>✅ 1499৳ Send Money করুন</b>
+    <div class="num">01945952533<span>🚀 Rocket / Upay Personal</span></div>
+    <div class="num">01713472942<span>💰 Nagad Personal</span></div>
+    <div style="font-size:10px;color:#666;margin-top:8px">টাকা পাঠালেই AI অটো Active হয়ে যাবে</div>
+  </div>
+
+  <div class="desc">
+    <b style="font-size:12px;color:#25D366">📋 বিবরণ:</b>
+    <p style="font-size:11px;color:#aaa;line-height:17px;margin:6px 0 0 0">
+      AS.AI দিচ্ছে 100% অটো সার্ভিস। কোন মানুষের সাথে কথা বলা লাগবে না। 
+      মাত্র 1499৳ পেমেন্ট করলেই 2 ঘন্টার ভিতর সব কাজ Active হয়ে যাবে। 
+      দ্রুত, বিশ্বস্ত এবং 24/7 সার্ভিস।
+    </p>
+  </div>
+
+  <div class="input">
+    <input id="q" placeholder="এখানে লিখুন...">
+    <button style="background:#fff;color:#000" onclick="send()">➤</button>
+  </div>
+</div>
+
+<script>
+const chat = document.getElementById('chat');
+function addMsg(t, cls){
+  let d=document.createElement('div');
+  d.className='msg '+cls;
+  d.innerHTML=t;
+  chat.appendChild(d);
+  chat.scrollTop=chat.scrollHeight;
+}
+function send(){
+  let i=document.getElementById('q');
+  if(!i.value) return;
+  addMsg(i.value,'user');
+  let v=i.value.toLowerCase();
+  i.value='';
+  setTimeout(()=>{
+    let reply="বুঝেছি স্যার, AS.AI এটা 100% অটো করে দিবে।<br><br>👉 01945952533<br>👉 01713472942<br>1499৳ Send Money করুন";
+    if(v.includes('দাম')||v.includes('টাকা')||v.includes('price')) reply="মাত্র 1499৳ স্যার, আজকের অফার।";
+    addMsg(reply,'bot');
+  },700);
+}
+document.getElementById('q').addEventListener('keypress',e=>{if(e.key==='Enter')send()});
+</script>
+</body>
+</html>
